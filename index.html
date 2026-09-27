@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nazir Hussain — IT Student & Security Tinkerer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F1115;
+    --surface: #161920;
+    --border: #262B34;
+    --text: #E7E5E0;
+    --text-dim: #8B909B;
+    --accent: #C9A24B;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 48px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 48px),
+      var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  a{ color: var(--accent); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header{
+    position: sticky;
+    top: 0;
+    background: rgba(15,17,21,0.85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+  }
+
+  nav.wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+  }
+
+  nav .mark{ color: var(--text); font-weight: 700; }
+  nav .links{ display:flex; gap: 20px; }
+  nav .links a{ color: var(--text-dim); }
+  nav .links a:hover{ color: var(--accent); }
+
+  main section{ padding: 72px 0; border-bottom: 1px solid var(--border); }
+  main section:last-of-type{ border-bottom: none; }
+
+  h1{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  .role{
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    margin: 0 0 24px;
+  }
+
+  .lede{ color: var(--text-dim); max-width: 52ch; font-size: 1.05rem; }
+
+  h2{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin: 0 0 28px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about p{ max-width: 62ch; color: var(--text); }
+
+  .skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skills-list li{
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .project{
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+  }
+  .project:first-of-type{ border-top: none; padding-top: 0; }
+
+  .project-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .project-head h3{ margin:0; font-size: 1.15rem; font-weight: 600; }
+  .project-head .link{ font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; white-space: nowrap; }
+
+  .project p{ color: var(--text-dim); margin: 8px 0 10px; max-width: 60ch; }
+
+  .tags{ display:flex; gap: 8px; flex-wrap: wrap; }
+  .tags span{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid rgba(201,162,75,0.35);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .contact-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction: column; gap: 10px; }
+  .contact-list a{ font-family: 'JetBrains Mono', monospace; font-size: 1rem; }
+
+  footer{ padding: 32px 0 48px; color: var(--text-dim); font-size: 0.85rem; }
+
+  @media (max-width: 480px){
+    nav .links{ gap: 12px; font-size: 0.75rem; }
+    main section{ padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <span class="mark">NH</span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="wrap">
+    <h1>Nazir Hussain</h1>
+    <p class="role">IT Student — Cybersecurity Track</p>
+    <p class="lede">
+      I learn by building. Most of my projects start as a question about
+      how something actually works under the hood — passwords, networks,
+      logs — and end up as a small tool that answers it.
+    </p>
+  </section>
+
+  <section class="wrap about" id="about">
+    <h2>about</h2>
+    <p>
+      I'm an IT student focused on cybersecurity, currently building a
+      portfolio of hands-on security tools in Python. I'm most interested
+      in the practical side of security — how attacks actually work, and
+      what a defender can build to catch or prevent them. Outside of
+      coursework, I spend time reading about common vulnerabilities and
+      recreating small versions of real security tools to understand them
+      properly.
+    </p>
+  </section>
+
+  <section class="wrap" id="skills">
+    <h2>skills</h2>
+    <ul class="skills-list">
+      <li>Python</li>
+      <li>Git &amp; GitHub</li>
+      <li>Networking Fundamentals</li>
+      <li>Linux</li>
+      <li>Cybersecurity Fundamentals</li>
+      <li>HTML &amp; CSS</li>
+    </ul>
+  </section>
+
+  <section class="wrap" id="projects">
+    <h2>projects</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Password Strength Analyzer</h3>
+        <a class="link" href="https://github.com/nazir583/Password-strength-analyzer" target="_blank" rel="noopener">github &#8599;</a>
+      </div>
+      <p>
+        A CLI tool that scores password strength using entropy calculation,
+        common-password detection, and pattern analysis, and generates
+        cryptographically secure random passwords.
+      </p>
+      <div class="tags"><span>Python</span><span>Security</span><span>CLI</span></div>
+    </div>
+
+    <!--
+      Add your next project by copying the block below and filling it in.
+      <div class="project">
+        <div class="project-head">
+          <h3>Project Name</h3>
+          <a class="link" href="YOUR_REPO_URL" target="_blank" rel="noopener">github &#8599;</a>
+        </div>
+        <p>One or two sentences on what it does and why you built it.</p>
+        <div class="tags"><span>Tag</span><span>Tag</span></div>
+      </div>
+    -->
+
+    <div class="project">
+      <div class="project-head">
+        <h3>Next project — in progress</h3>
+      </div>
+      <p>
+        A network port scanner, security header checker, or file integrity
+        tool is a good next addition. Replace this block once it's pushed.
+      </p>
+      <div class="tags"><span>Coming soon</span></div>
+    </div>
+
+  </section>
+
+  <section class="wrap" id="contact">
+    <h2>contact</h2>
+    <ul class="contact-list">
+      <li>&#9993; <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+      <li>&#9670; <a href="https://github.com/nazir583" target="_blank" rel="noopener">github.com/nazir583</a></li>
+      <li>&#9670; <a href="#" target="_blank" rel="noopener">linkedin.com/in/your-profile</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Built by Nazir Hussain.
+</footer>
+
+</body>
+</html>
